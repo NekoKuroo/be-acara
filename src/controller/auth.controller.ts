@@ -65,6 +65,7 @@ export default {
     },
         // user login
     async login(req: Request, res: Response){
+        
         const {identifier,password} = req.body as unknown as Tlogin
         try {
             // ambil data user berdasarkan "identifier" -> email dan username
@@ -118,6 +119,7 @@ export default {
     },
 
     async me(req: IReqUser, res: Response) {
+        
         try{
             const user = req.user;
             const result = await UserModel.findById(user?.id);
