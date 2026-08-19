@@ -7,7 +7,12 @@
   },
   "servers": [
     {
-      "url": "http://localhost:3000/"
+      "url": "http://localhost:3000/api",
+      "description": "local server"
+    },
+    {
+      "url": "https://be-acara-iota.vercel.app/api",
+      "description": "deploy server"
     }
   ],
   "paths": {
@@ -65,18 +70,16 @@
           }
         },
         "requestBody": {
+          "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "type": "object",
-                "properties": {
-                  "identifier": {
-                    "example": "any"
-                  },
-                  "password": {
-                    "example": "any"
-                  }
-                }
+                "$ref": "#/components/schemas/LoginRequest"
+              }
+            },
+            "application/xml": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginRequest"
               }
             }
           }
@@ -105,7 +108,12 @@
           "403": {
             "description": "Forbidden"
           }
-        }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
       }
     }
   },
@@ -122,24 +130,17 @@
         "properties": {
           "identifier": {
             "type": "string",
-            "example": "rianfi"
+            "example": "cici"
           },
           "password": {
             "type": "string",
-            "example": "123456"
+            "example": "baba"
           }
+        },
+        "xml": {
+          "name": "LoginRequest"
         }
       }
     }
-  },
-  "server": [
-    {
-      "url": "http://localhost:3000/api",
-      "description": "local server"
-    },
-    {
-      "url": "https://be-acara-iota.vercel.app/api",
-      "description": "deploy server"
-    }
-  ]
+  }
 }

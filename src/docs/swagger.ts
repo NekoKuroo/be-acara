@@ -23,10 +23,13 @@ const doc = {
                 scheme: "bearer",
             },
         },
+        /*
+        harus diinput dulu di POSTMAN biar kesimpan sebagai database nya
+         */
         schemas: {
             LoginRequest: {
-                identifier: "rianfi",
-                password: "123456",
+                identifier: "cici",
+                password: "baba",
             },
         },
     },
