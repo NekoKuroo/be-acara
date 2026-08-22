@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acara - Content Creator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: silver;
+        }
+        .container{
+            max-width: 600px;
+            margin: 2px auto;
+            background-color: bisque;
+            border: 1px solid #f4f4f4;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        .header{
+            background-color: greenyellow;
+            color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+        .content{
+            padding: 20px
+        }
+        .footer{
+            background-color: sandybrown;
+            color: blanchedalmond;
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+        }
+        .button{
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 20px;
+            color: green;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid;
+        }
+        @media (max-width: 600px){
+            .container{
+                width: 100px;
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Selamat Datang</h1>
+        </div>
+        <div class="content">
+            <p>Halo <%= username %>,</p>
+            <p>
+                Terima kasih telah mendaftar di layanan kami.
+                Berikut adalah informasi dari akun Anda:
+            </p>
+            <ul>
+                <li><strong>Nama:</strong><%= fullName %></li>
+                <li><strong>Email:</strong><%= email %></li>
+                <li><strong>Tanggal pendaftaran:</strong><%= createdAt %></li>
+            </ul>
+            <p>Untuk memulai, silahkan klik tombol dibawah ini: </p>
+            <a href="<%= activationLink %>" class="button">Aktifkan Akun</a>
+            <p>
+                Jika Anda memiliki pertanyaan, tolong hubungi kami.
+            </p>
+            <p>Salam hangat, ACARA</p>
+        </div>
+        <div class="footer">
+            <p>&copy: 2026 Acara Event Content Creator. HAK CIPTA DILINDUNGI</p>
+        </div>
+    </div>
+</body>
+</html>
