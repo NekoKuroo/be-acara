@@ -31,6 +31,9 @@ const doc = {
                 identifier: "cici",
                 password: "baba",
             },
+            ActivationRequest: {
+                code: "abcdef"
+            }
         },
     },
 };
