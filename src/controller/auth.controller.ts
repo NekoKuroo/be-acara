@@ -72,15 +72,12 @@ export default {
                 confirmPassword
             })
 
-            const activationCode = Math.random().toString(36).substring(2, 10);
-
             const result = await UserModel.create({
                 fullName,
                 email,
                 username,
                 password,
-                activationCode,                 // 🔥 Simpan kode aktivasi
-            isActive: false,                // 🔥 Belum aktif
+                
             })
 
             res.status(200).json({
